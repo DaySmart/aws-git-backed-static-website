@@ -103,7 +103,7 @@ specify the Hugo static site generator plugin by adding these
 parameters:
 
         "ParameterKey=GeneratorLambdaFunctionS3Bucket,ParameterValue=run.alestic.com" \
-        "ParameterKey=GeneratorLambdaFunctionS3Key,ParameterValue=lambda/aws-lambda-codepipeline-site-generator-hugo.zip"
+        "ParameterKey=GeneratorLambdaFunctionS3Key,ParameterValue=lambda/aws-lambda-site-generator-hugo.zip"
 
 When the stack starts up, two email messages will be sent to the
 address associated with your domain's registration and one will be
@@ -144,7 +144,7 @@ Set nameservers in your domain registrar to the above.
 ### Use Git
 
     repository=$domain
-    profile=$AWS_DEFAULT_PROFILE   # The correct aws-cli profile name
+    profile=$AWS_PROFILE   # The correct aws-cli profile name
 
     git clone \
       --config 'credential.helper=!aws codecommit --profile '$profile' --region '$region' credential-helper $@' \
